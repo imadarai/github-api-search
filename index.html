@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>GitHub API</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <!-- HEADER HERE WITH LOGO AND INPUT FIELDS -->
+        <header>
+            <logo></logo>
+        <div class="input-container">
+            <input type="text" name="username" value="" placeholder="Git User">
+            <input type="password" name="password" value="" placeholder="Git Password">
+            <input type="text" name="user-to-search" value="" placeholder="Search Git User" autofocus>
+            <button type="button" name="button">Submit</button>
+        </div>
+        </header>
+
+        <!-- MAIN BODY HERE WITH ALL THE RESULTS -->
+        <main>
+        <div class="search-results">
+            <div class="full-result">
+            </div>
+        </div>
+        </main>
+
+        <script id="userId" type="text/x-handlebars-template">
+            {{#response}}
+                <div class="handlebars">
+                    <div class="ind-result">
+                        <img src={{owner.avatar_url}} alt="">
+                        <h2>{{full_name}}</h2><div id="down-triangle"></div>
+                    </div>
+                    <div class="repo-comments"></div>
+                </div>
+            {{/response}}
+        </script>
+
+        <script id="repoData" type="text/x-handlebars-template">
+            {{#onlyTen}}
+                <ul>
+                    <li>{{commit.message}}</li>
+                </ul>
+            {{/onlyTen}}
+
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="script.js" charset="utf-8"></script>
+    </body>
+
+</html>
