@@ -5,6 +5,7 @@ Project was built using GitHub API.  An AJAX call to API with username, password
 
 ## Tech Stack
  * Javascript
+ * JQuery
  * AJAX
  * HTML5
  * Handlebars
